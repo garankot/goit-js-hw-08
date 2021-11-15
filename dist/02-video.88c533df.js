@@ -3118,18 +3118,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const player = new _player.default(document.querySelector("#vimeo-player"));
 const CURRENT_TIME = "videoplayer-current-time";
-player.on("timeupdate", (0, _lodash.default)(timeupdate, 1000));
+player.on("currenttime", (0, _lodash.default)(currenttime, 1000));
 
 if (localStorage.getItem(CURRENT_TIME)) {
   player.setCurrentTime(Number.parseFloat(localStorage.getItem(CURRENT_TIME)));
 }
 
-function timeupdate(event) {
+function currenttime(event) {
   localStorage.setItem(CURRENT_TIME, event.seconds === event.duration ? 0 : event.seconds);
 }
 
-const onPlay = function (data) {// data is an object containing properties specific to that event
-};
+const onPlay = function (data) {};
 
 player.on("play", onPlay);
 },{"lodash.throttle":"../node_modules/lodash.throttle/index.js","@vimeo/player":"../node_modules/@vimeo/player/dist/player.es.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -3160,7 +3159,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50888" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56189" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
