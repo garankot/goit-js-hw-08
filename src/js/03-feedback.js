@@ -4,7 +4,7 @@ const feedbackForm = document.querySelector('.feedback-form');
 const feedbackFormState = localStorage.getItem('feedback-form-state');
 const parseData = JSON.parse(feedbackFormState);
 
-if (parseData !== "") {
+if (parseData !== null) {
   feedbackForm['email'].value = parseData.email;
   feedbackForm['message'].value = parseData.message;
 }
